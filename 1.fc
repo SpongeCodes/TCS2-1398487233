@@ -1,0 +1,31 @@
+{-
+
+  TASK 1 - Greatest common divisor
+  Write the method that calculates greater common divisor for two integers greater
+  or equal to 1 and less than 1048576.
+-}
+
+;;#pragma version >=0.2.0;
+
+;; #include "imports/stdlib.fc";
+;; #include "imports/constants.fc";
+;; #include "imports/utils.fc";
+
+() recv_internal() {
+}
+
+;; testable
+(int) gcd(int a, int b) method_id {
+
+   ;; int gcd;
+    int gcd = min(a,b);
+    int flag = 1;
+    while((gcd > 0) & flag)
+    {
+        if ((a % gcd == 0) & (b % gcd == 0))
+         { flag = 0;}
+        else { gcd -= 1;}
+    }
+    return gcd;
+    
+}
